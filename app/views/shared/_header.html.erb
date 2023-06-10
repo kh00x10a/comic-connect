@@ -1,0 +1,24 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class="top-page-header">
+  <div class="title-bar">
+    <!-- 可能ならば、ロゴの写真を使う -->
+    <%= link_to 'Comic Connect', '#', class: "title" %>
+    <!-- //可能ならば、ロゴの写真を使う -->
+  </div>
+  <div class='search-bar-contents'>
+    <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+    <ul class='lists'>
+      <!-- ログインの有無で表示を切り替える -->
+      <li><%= link_to 'nickname', "#", class: "user-nickname" %></li> 
+      <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" %></li> 
+    
+      <!-- <li><%= link_to 'ログイン', "#", class: "login" %></li> -->
+      <!-- <li><%= link_to '新規登録', "#", class: "sign-up" %></li> -->
+      <!-- //ログインの有無で表示を切り替える -->
+    </ul>
+  </div>
+
+  </div>
