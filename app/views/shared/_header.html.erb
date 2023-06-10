@@ -12,7 +12,7 @@
     <% end %>
     <ul class='lists'>
       <!-- ログインの有無で表示を切り替える -->
-      <li><%= link_to 'nickname', "#", class: "user-nickname" %></li> 
+      <li><%= link_to current_user.name, edit_user_path(current_user), class: "user-nickname" %></li> 
       <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" %></li> 
     
       <!-- <li><%= link_to 'ログイン', "#", class: "login" %></li> -->
