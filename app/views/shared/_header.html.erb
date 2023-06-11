@@ -18,10 +18,10 @@
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-pull-down-list logout" %></li>
           </ul>
         </li>
-        <li class="new-action" id="new-lists">new
+        <li class="new-action" id="new-lists">action
           <ul class="show-lists" id="new-pull-down" style="display: none;">
             <li><%= link_to '新規投稿', "#", class: "new-pull-down-list new-comic" %></li>
-            <li><%= link_to 'ルーム作成', "#", class: "new-pull-down-list new-room" %></li>
+            <li><%= link_to 'チャットルーム', "#", class: "new-pull-down-list new-room" %></li>
           </ul>
         </li>
       <% else %>
