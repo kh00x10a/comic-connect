@@ -9,4 +9,8 @@ class Magazine < ActiveHash::Base
     { id: 7, name: 'BL(ボーイズラブ)' },
     { id: 8, name: 'その他' }
   ]
+
+  include ActiveHash::Associations
+  has_many :comics
+  
   end

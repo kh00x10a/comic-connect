@@ -15,4 +15,8 @@ class Decade < ActiveHash::Base
     { id: 13, name: '分からない' },
     { id: 14, name: 'その他' }
   ]
+
+  include ActiveHash::Associations
+  has_many :comics
+  
   end

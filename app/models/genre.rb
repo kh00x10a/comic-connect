@@ -19,4 +19,8 @@ class Genre < ActiveHash::Base
     { id: 17, name: 'ヤンキー・任侠' },
     { id: 18, name: 'その他' }
   ]
+
+  include ActiveHash::Associations
+  has_many :comics
+
   end
