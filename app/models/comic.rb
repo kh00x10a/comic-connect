@@ -4,5 +4,9 @@ class Comic < ApplicationRecord
   belongs_to :magazine
   belongs_to :decade
 
+  validates :title, :author, : presence: true
+
+  validates :genre_id, :magazine_id, :decade_id, numericality: { other_than: 1 , message:"can't be blank"}
+  
   belongs_to :user
 end
