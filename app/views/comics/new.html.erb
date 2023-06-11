@@ -1,0 +1,114 @@
+<div class="comics-new-contents">
+  <header class="comics-new-header">
+    <%= link_to 'Comic Connect', '/', class: "title" %>
+
+  </header>
+  <div class="comics-new-main">
+    <h2 class="comics-new-title">漫画の情報を入力</h2>
+    <%= form_with model: @comic, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 漫画の写真 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        漫画の写真
+        <span class="form-any">任意</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"comic-image" %>
+      </div>
+    </div>
+    <%# /漫画の写真 %>
+    <%# タイトルと作者 %>
+    <div class="new-comics">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"comics-text", id:"comic-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      <div class="comics-artist">
+        <div class="weight-bold-text">
+          作者（原作）
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :author, class:"comics-text", id:"comic-info", placeholder:"作者名（原作者と作画者がいる場合にはこちらに原作者を書いてください。）（必須 40文字まで)" ,maxlength:"40" %>
+        <div class="weight-bold-text">
+          作画
+          <span class="form-any">任意</span>
+        </div>
+        <%= f.text_area :author, class:"comics-text", id:"comic-info", placeholder:"作画者名（原作者と作画者に分かれていない場合はこちらは書かなくて大丈夫です。）（必須 40文字まで)" ,maxlength:"40" %>
+      </div>
+    </div>
+    <%# /タイトルと作者 %>
+
+    <%# 漫画の情報 %>
+    <div class="comics-detail">
+      <div class="weight-bold-text">漫画の情報</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          ジャンル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"comic-genre"}) %>
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:magazine_id, Magazine.all, :id, :name, {}, {class:"select-box", id:"comic-magazine"}) %>
+        <div class="weight-bold-text">
+          年代
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:decade_id, Decade.all, :id, :name, {}, {class:"select-box", id:"comic-decade"}) %>
+        <div class="weight-bold-text">
+          出版社
+          <span class="form-any">任意</span>
+        </div>
+        <%= f.text_area :publisher, class:"comics-text", id:"comic-info", placeholder:"出版社名（任意 40文字まで)" ,maxlength:"40" %>
+        <div class="weight-bold-text">
+          掲載紙
+          <span class="form-any">任意</span>
+        </div>
+        <%= f.text_area :publication, class:"comics-text", id:"comic-info", placeholder:"掲載紙名（任意 40文字まで)" ,maxlength:"40" %>
+        <div class="weight-bold-text">
+          一言感想
+          <span class="form-any">任意</span>
+        </div>
+        <%= f.text_area :impression, class:"comics-text", id:"comic-info", placeholder:"一言感想をお書きください。（ネタバレを含む内容は書かないで下さい。）（任意 50文字まで)" ,maxlength:"50" %>
+      </div>
+    </div>
+    <%# /漫画の情報 %>
+
+    <%# 注意書き %>
+    <div class="caution">
+      <p class="sentence">
+
+      </p>
+      <p class="sentence">
+
+      </p>
+      <p class="sentence">
+
+      </p>
+    </div>
+    <%# /注意書き %>
+    <%# 下部ボタン %>
+    <div class="new-btn-contents">
+      <%= f.submit "投稿する", class:"new-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <footer class="items-sell-footer">
+    <%= link_to "#", "/" %>
+    <p class="inc">
+
+    </p>
+  </footer>
+</div>
