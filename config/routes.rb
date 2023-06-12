@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   get 'comics/index'
   root to: "comics#index"
   resources :comics
+    collection do
+      get 'search'
+    end
 end
