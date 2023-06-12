@@ -24,6 +24,9 @@ class ComicsController < ApplicationController
 
   def edit
     @comic = Comic.find(params[:id])
+    if current_user != @comic.user
+      redirect_to root_path
+    end
   end
 
   def update
