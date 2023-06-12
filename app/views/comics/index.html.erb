@@ -24,7 +24,7 @@
     <ul class='comic-lists'>
       <% @comics.each do |comic| %>
         <li class='list'>
-          <%= link_to "#" do %>
+          <%= link_to comic_path(comic.id) do %>
           <div class='comic-img-content'>
             <% if comic.image.attached? %>
               <%= image_tag comic.image.variant(resize: '250x250'), class: "comic-img" %>
@@ -38,9 +38,9 @@
             </h3>
             <div class='comic-artist'>
               <% if comic.illustrator.blank? %>
-                <span>作者:<%= comic.author %></span>
+                <span>作者：<%= comic.author %></span>
               <% else %>
-                <span>原作:<%= comic.author %><br>作画:<%= comic.illustrator %></span>
+                <span>原作：<%= comic.author %><br>作画：<%= comic.illustrator %></span>
               <% end %>
               <div class='comic-genre'>
                 <span><%= comic.genre.name %></span>
@@ -59,7 +59,7 @@
           <%= image_tag ("m_e_others_501.png"), class: "No-img" %>
           <div class='comic-info'>
             <h3 class='comic-title'>
-              商品を出品してね！
+              タイトル名
             </h3>
             <div class='comic-artist'>
                 <span>作者:作者名</span>

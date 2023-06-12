@@ -18,6 +18,10 @@ class ComicsController < ApplicationController
     end
   end
 
+  def show
+    @comic = Comic.find(params[:id])
+  end
+
   private
 
   def comic_params
