@@ -24,7 +24,7 @@
     <ul class='comic-lists'>
       <% @comics.each do |comic| %>
         <li class='list'>
-          <%= link_to "#" do %>
+          <%= link_to comic_path(comic.id) do %>
           <div class='comic-img-content'>
             <% if comic.image.attached? %>
               <%= image_tag comic.image.variant(resize: '250x250'), class: "comic-img" %>

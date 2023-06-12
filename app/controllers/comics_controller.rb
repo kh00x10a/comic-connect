@@ -18,6 +18,9 @@ class ComicsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def comic_params
