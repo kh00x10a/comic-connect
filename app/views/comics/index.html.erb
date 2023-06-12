@@ -1,6 +1,6 @@
 <div class='main'>
   <%= render "shared/header" %>
-  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <%# なんか書く予定帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
       何か書く予定
@@ -12,29 +12,25 @@
       同じ趣味のユーザー同士でチャットしよう
     </p>
   </div>
-  <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
+  <%# /なんか書く予定帯部分  %>
 
 
-  <%# 商品一覧 %>
+  <%# 投稿一覧 %>
   <div class='comic-contents'>
     <h2 class='title'>投稿作品</h2>
     <div class="subtitle" >
       新規投稿作品
     </div>
     <ul class='comic-lists'>
-
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <%  @comics.each do |comic| %>
+      <% @comics.each do |comic| %>
         <li class='list'>
           <%= link_to "#" do %>
           <div class='comic-img-content'>
-            <!-- 画像のない場合は代わりの画像を表示させるようにする -->
             <% if comic.image.attached? %>
               <%= image_tag comic.image.variant(resize: '250x250'), class: "comic-img" %>
             <% else %>
               <%= image_tag ("m_e_others_501.png"), class: "No-img" %>
             <% end %>
-            <!-- //画像のない場合は代わりの画像を表示させるようにする -->
           </div>
           <div class='comic-info'>
             <h3 class='comic-title'>
@@ -57,31 +53,28 @@
           <% end %>
         </li>
       <% end %>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-
-      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
       <% if @comics.empty? %>
         <li class='list'>
           <%= link_to '#' do %>
-          <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-          <div class='item-info'>
-            <h3 class='item-name'>
+          <%= image_tag ("m_e_others_501.png"), class: "No-img" %>
+          <div class='comic-info'>
+            <h3 class='comic-title'>
               商品を出品してね！
             </h3>
-            <div class='item-price'>
-              <span>99999999円<br>(税込み)</span>
-              <div class='star-btn'>
-                <span class='star-count'>0</span>
+            <div class='comic-artist'>
+                <span>作者:作者名</span>
+              <div class='comic-genre'>
+                <span>ジャンル</span>
+              </div>
+              <div class='user-name'>
+                <span>投稿したユーザー名</span>
               </div>
             </div>
           </div>
           <% end %>
         </li>
       <% end %>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
     </ul>
   </div>
-  <%# /商品一覧 %>
+  <%# /投稿一覧 %>
 </div>
