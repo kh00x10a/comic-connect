@@ -1,6 +1,6 @@
 class ComicsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :set_comic, except: [:index, :new, :create]
+  before_action :set_comic, except: [:index, :new, :create, :search]
   def index
     @comics = Comic.order("created_at DESC")
   end

@@ -6,7 +6,7 @@
     <!-- //可能ならば、ロゴの写真を使う -->
   </div>
   <div class='search-bar-contents'>
-    <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+    <%= form_with(url: search_comics_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %>
     <% end %>

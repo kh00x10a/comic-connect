@@ -1,0 +1,37 @@
+<div class='main'>
+  <%= render "shared/header" %>
+  <div class='comic-contents'>
+    <ul class='comic-lists'>
+      <% @comics.each do |comic| %>
+        <li class='list'>
+          <%= link_to comic_path(comic.id) do %>
+          <div class='comic-img-content'>
+            <% if comic.image.attached? %>
+              <%= image_tag comic.image.variant(resize: '250x250'), class: "comic-img" %>
+            <% else %>
+              <%= image_tag ("m_e_others_501.png"), class: "No-img" %>
+            <% end %>
+          </div>
+          <div class='comic-info'>
+            <h3 class='comic-title'>
+              <%= comic.title %>
+            </h3>
+            <div class='comic-artist'>
+              <% if comic.illustrator.blank? %>
+                <span>作者：<%= comic.author %></span>
+              <% else %>
+                <span>原作：<%= comic.author %><br>作画：<%= comic.illustrator %></span>
+              <% end %>
+              <div class='comic-genre'>
+                <span><%= comic.genre.name %></span>
+              </div>
+              <div class='user-name'>
+                <span><%= comic.user.name %></span>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
