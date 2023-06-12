@@ -22,6 +22,23 @@ class ComicsController < ApplicationController
     @comic = Comic.find(params[:id])
   end
 
+  def edit
+    @comic = Comic.find(params[:id])
+    if current_user != @comic.user
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @comic = Comic.find(params[:id])
+    @comic.update(comic_params)
+    if @comic.update(comic_params)
+      redirect_to comic_path(@comic)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def comic_params
