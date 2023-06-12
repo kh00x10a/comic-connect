@@ -99,7 +99,7 @@
     <%# 下部ボタン %>
     <div class="new-btn-contents">
       <%= f.submit "変更する", class:"new-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%=link_to 'もどる', comic_path(@comic.id), class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
