@@ -1,6 +1,6 @@
 <div class='main'>
   <%= render "shared/header" %>
-  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <%# なんか書く予定帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
       何か書く予定
@@ -12,65 +12,69 @@
       同じ趣味のユーザー同士でチャットしよう
     </p>
   </div>
-  <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
+  <%# /なんか書く予定帯部分  %>
 
 
-  <%# 商品一覧 %>
-  <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
+  <%# 投稿一覧 %>
+  <div class='comic-contents'>
+    <h2 class='title'>投稿作品</h2>
     <div class="subtitle" >
-      新規投稿商品
+      新規投稿作品
     </div>
-    <ul class='item-lists'>
-
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <div class='item-img-content'>
-
-          <%# 商品が売れていればsold outを表示しましょう %>
-          <div class='sold-out'>
-            <span>Sold Out!!</span>
+    <ul class='comic-lists'>
+      <% @comics.each do |comic| %>
+        <li class='list'>
+          <%= link_to "#" do %>
+          <div class='comic-img-content'>
+            <% if comic.image.attached? %>
+              <%= image_tag comic.image.variant(resize: '250x250'), class: "comic-img" %>
+            <% else %>
+              <%= image_tag ("m_e_others_501.png"), class: "No-img" %>
+            <% end %>
           </div>
-          <%# //商品が売れていればsold outを表示しましょう %>
-
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= "商品名" %>
-          </h3>
-          <div class='item-price'>
-            <span><%= "販売価格" %>円<br><%= '配送料負担' %></span>
-            <div class='star-btn'>
-              <span class='star-count'>0</span>
+          <div class='comic-info'>
+            <h3 class='comic-title'>
+              <%= comic.title %>
+            </h3>
+            <div class='comic-artist'>
+              <% if comic.illustrator.blank? %>
+                <span>作者:<%= comic.author %></span>
+              <% else %>
+                <span>原作:<%= comic.author %><br>作画:<%= comic.illustrator %></span>
+              <% end %>
+              <div class='comic-genre'>
+                <span><%= comic.genre.name %></span>
+              </div>
+              <div class='user-name'>
+                <span><%= comic.user.name %></span>
+              </div>
             </div>
           </div>
-        </div>
-        <% end %>
-      </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-
-      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
-      <li class='list'>
-        <%= link_to '#' do %>
-        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            商品を出品してね！
-          </h3>
-          <div class='item-price'>
-            <span>99999999円<br>(税込み)</span>
-            <div class='star-btn'>
-              <span class='star-count'>0</span>
+          <% end %>
+        </li>
+      <% end %>
+      <% if @comics.empty? %>
+        <li class='list'>
+          <%= link_to '#' do %>
+          <%= image_tag ("m_e_others_501.png"), class: "No-img" %>
+          <div class='comic-info'>
+            <h3 class='comic-title'>
+              商品を出品してね！
+            </h3>
+            <div class='comic-artist'>
+                <span>作者:作者名</span>
+              <div class='comic-genre'>
+                <span>ジャンル</span>
+              </div>
+              <div class='user-name'>
+                <span>投稿したユーザー名</span>
+              </div>
             </div>
           </div>
-        </div>
-        <% end %>
-      </li>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
-  <%# /商品一覧 %>
+  <%# /投稿一覧 %>
 </div>
