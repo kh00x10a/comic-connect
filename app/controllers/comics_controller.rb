@@ -1,6 +1,6 @@
 class ComicsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_comic, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :set_comic, except: [:index, :new, :create, :search]
   def index
     @comics = Comic.order("created_at DESC")
   end
@@ -43,6 +43,10 @@ class ComicsController < ApplicationController
     if @comic.destroy
       redirect_to root_path
     end
+  end
+
+  def search
+    @comics = Comic.search(params[:keyword])
   end
 
   private

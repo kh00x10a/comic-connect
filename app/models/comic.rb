@@ -11,5 +11,12 @@ class Comic < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  def self.search(search)
+    if search != ""
+      Comic.where(["title Like? OR author Like? OR illustrator Like?", "%#{search}%", "%#{search}%", "%#{search}%"])
+    else
+      Comic.all
+    end
+  end
 
 end
