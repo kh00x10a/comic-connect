@@ -1,7 +1,17 @@
 .page-heading {
   margin: 0 auto;
   text-align: center;
-  width: 50vh;
+  width: 50vw;
   font-size: 30px;
   font-weight: bold;
+}
+
+.user-manage {
+  display: flex;
+  justify-content: center;
+}
+
+.user_btn {
+  font-size: 20px;
+  margin: 0 1vh;
 }
