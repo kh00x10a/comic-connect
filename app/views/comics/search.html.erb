@@ -26,7 +26,7 @@
                 <span><%= comic.genre.name %></span>
               </div>
               <div class='user-name'>
-                <span><%= comic.user.name %></span>
+                <%= link_to "by #{comic.user.name}", user_path(comic.user.id) %>
               </div>
             </div>
           </div>

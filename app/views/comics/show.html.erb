@@ -20,7 +20,7 @@
           <li class="comic-illustrator">作画：<%= @comic.illustrator %></li>
         <% end %>
         <% if @comic.user.present? %>
-          <li><%= link_to "by #{@comic.user.name}", "#", class: "user-name" %></li>
+          <li><%= link_to "by #{@comic.user.name}", user_path(@comic.user.id), class: "user-name" %></li>
         <% end %>
         <% if user_signed_in? && current_user.id == @comic.user_id %>
           <div class="comic-manage">
