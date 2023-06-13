@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'comics/index'
   root to: "comics#index"
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
   resources :comics do
     collection do
       get 'search'
