@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* 画面の高さに合わせて中央配置 */
+}
+
+.comic-box {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.comic-image {
+  text-align: center;
+}
+
+.comic-title {
+  font-size: 4vh;
+}
+
+.user-name {
+  margin-left: 70px;
+}
+
+.detail-table-box {
+}
+
+.detail-table {
+  text-align: center;
+}
+
+.comment-box {
+  text-align: center;
+}
+
+.comments_lists {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comments_list {
+  margin-bottom: 10px;
+}
