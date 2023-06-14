@@ -19,6 +19,8 @@ class ComicsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @comic.comments.includes(:user)
   end
 
   def edit
@@ -41,7 +43,7 @@ class ComicsController < ApplicationController
       @comic.destroy
     end
     if @comic.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: 'コミックと関連するコメントを削除しました。'
     end
   end
 

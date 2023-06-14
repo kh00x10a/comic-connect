@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def destroy
     if current_user == @user
       @user.destroy
-      redirect_to root_path, notice: 'ユーザーと関連するコミックを削除しました。'
+      redirect_to root_path, notice: 'ユーザーと関連するコミックとコメントを削除しました。'
     else
       redirect_to root_path, alert: '権限がありません。'
     end
