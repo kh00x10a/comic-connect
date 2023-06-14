@@ -4,9 +4,12 @@ class Comic < ApplicationRecord
   belongs_to :magazine
   belongs_to :decade
 
-  validates :title, :author, presence: true
+  validates :title, :author, presence: true, length: { maximum: 40 }
 
   validates :genre_id, :magazine_id, :decade_id, numericality: { other_than: 1 , message:"can't be blank"}
+
+  validates :illustrator, :publisher, :publication, length: { maximum: 40 }
+  validates :impression, length: { maximum: 50 }
 
   belongs_to :user
   has_many :comments, dependent: :destroy

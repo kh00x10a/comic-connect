@@ -12,7 +12,7 @@ class Decade < ActiveHash::Base
     { id: 10, name: '2000年代' },
     { id: 11, name: '2010年代' },
     { id: 12, name: '2020年代以降' },
-    { id: 13, name: '分からない' },
+    { id: 13, name: '不明' },
     { id: 14, name: 'その他' }
   ]
 
