@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
-  resources :messages, only: :index
-  resources :rooms, only: [:new, :create, :index]
+  resources :rooms, only: [:new, :create, :index] do
+    resources :messages, only: [:index, :create]
+  end
 end
