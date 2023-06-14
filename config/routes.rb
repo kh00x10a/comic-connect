@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'messages/index'
   devise_for :users
   get 'comics/index'
   root to: "comics#index"
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
+  resources :messages, only: :index
 end
