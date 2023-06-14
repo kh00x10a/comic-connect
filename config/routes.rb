@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
-  resources :rooms, only: [:new, :create, :index] do
+  resources :rooms, only: [:new, :create, :index, :destroy] do
     resources :messages, only: [:index, :create]
   end
 end
