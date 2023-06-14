@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
   resources :messages, only: :index
-  resources :rooms, only: [:new, :create]
+  resources :rooms, only: [:new, :create, :index]
 end
