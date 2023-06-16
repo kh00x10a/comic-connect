@@ -1,71 +1,76 @@
-<div class='main'>
+<div class="main">
   <%= render "shared/header" %>
-  <div class="container">
+  <%# 商品の概要 %>
+  <div class="comic-show">
     <div class="comic-box">
-      <div class="comic-image">
+      <span class="comic-title">
+        <%= @comic.title %>
+      </span>
+      <div class="comic-img-content">
         <% if @comic.image.attached? %>
-          <%= image_tag @comic.image.variant(resize: '250x250'), class: "comic-img" %>
-        <% else %>
-          <%= image_tag ("m_e_others_501.png"), class: "No-img" %>
+        <%= image_tag @comic.image.variant(resize: '250x250'), class: "comic-box-img" %>
+      <% else %>
+        <%= image_tag ("m_e_others_501.png"), class: "No-box-img" %>
+      <% end %>
+      </div>
+      <div class="comic-artist-box">
+
+        <span class="comic-artist">
+          <% if @comic.illustrator.blank? %>
+            作者：<%= @comic.author %>
+          <% else %>
+            原作：<%= @comic.author %><br>
+            作画：<%= @comic.illustrator %>
+          <% end %>
+        </span>
+        <% if @comic.user.present? %>
+          <%= link_to "by #{@comic.user.name}", user_path(@comic.user.id), class: "user-name" %>
         <% end %>
       </div>
-      <div class="comic-main-info">
-        <ul>
-          <li class="comic-title">
-            <%= @comic.title %>
-          </li>
-          <% if @comic.illustrator.blank? %>
-            <li class="comic-author">作者：<%= @comic.author %></li>
-          <% else %>
-            <li class="class-author">原作：<%= @comic.author %></li>
-            <li class="comic-illustrator">作画：<%= @comic.illustrator %></li>
-          <% end %>
-          <% if @comic.user.present? %>
-            <li><%= link_to "by #{@comic.user.name}", user_path(@comic.user.id), class: "user-name" %></li>
-          <% end %>
-          <% if user_signed_in? && current_user.id == @comic.user_id %>
-            <div class="comic-manage">
-              <%= link_to "編集する", edit_comic_path(@comic), class: "comic-btn" %>
-              <%= link_to "削除する", comic_path(@comic), method: :delete, class: "comic-btn" %>
-            </div>
-          <% end %>
-        </ul>
+      <% if user_signed_in? && current_user.id == @comic.user_id %>
+      <div class="comic-manage">
+        <%= link_to "編集する", edit_comic_path(@comic), class: "comic-btn" %>
+        <%= link_to "削除する", comic_path(@comic), method: :delete, class: "comic-btn" %>
       </div>
-      <div class="detail-table-box">
-        <table class="detail-table">
-          <tbody>
-            <tr>
-              <th class="detail-comic">ジャンル</th>
-              <td class="detail-value"><%= @comic.genre.name %></td>
-            </tr>
-            <tr>
-              <th class="detail-comic">カテゴリー</th>
-              <td class="detail-value"><%= @comic.magazine.name %></td>
-            </tr>
-            <tr>
-              <th class="detail-comic">年代</th>
-              <td class="detail-value"><%= @comic.decade.name %></td>
-            </tr>
-            <tr>
-              <th class="detail-comic">出版社</th>
-              <td class="detail-value"><%= @comic.publisher %></td>
-            </tr>
-            <tr>
-              <th class="detail-comic">掲載誌</th>
-              <td class="detail-value"><%= @comic.publication %></td>
-            </tr>
-            <tr>
-              <th class="detail-comic">一言感想</th>
-              <td class="detail-value"><%= @comic.impression %></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <% end %>
+
+
+
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-comic">ジャンル</th>
+            <td class="detail-value"><%= @comic.genre.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-comic">カテゴリー</th>
+            <td class="detail-value"><%= @comic.magazine.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-comic">年代</th>
+            <td class="detail-value"><%= @comic.decade.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-comic">出版社</th>
+            <td class="detail-value"><%= @comic.publisher %></td>
+          </tr>
+          <tr>
+            <th class="detail-comic">掲載誌</th>
+            <td class="detail-value"><%= @comic.publication %></td>
+          </tr>
+          <tr>
+            <th class="detail-comic">一言感想</th>
+            <td class="detail-value"><%= @comic.impression %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <%# /商品の概要 %>
+
     <div class="comment-box">
       <% if user_signed_in? %>
         <%= form_with(model: [@comic, @comment], local: true) do |f| %>
-          <div class="field">
+          <div class="field" style="margin: auto;">
             <%= f.label :content, "コメント" %><br />
             <%= f.text_field :content, id:"comment_text" %>
           </div>
@@ -83,6 +88,5 @@
         <% end %>
       </ul>
     </div>
-    </div>
-    </div>
   </div>
+</div>
