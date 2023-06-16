@@ -83,20 +83,6 @@ a {
   height: 33vh;
 }
 
-.sold-out {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  transform: skewY(-10deg);
-}
-
-.sold-out > span {
-  color: #FFF;
-  font-size: 45px;
-  font: bold;
-}
 
 .comic-info {
   background-color: #FFF;
@@ -118,21 +104,5 @@ a {
 .user-name {
   flex: 1 1 100%;
 }
-
-.star-btn {
-  display: flex;
-  align-items: center;
-}
-
-.star-icon {
-  height: 2vh;
-  width: 2vh;
-  margin-right: 0.5vw;
-}
-
-.star-count {
-  font-size: 2vh;
-}
-
 
 /* //商品一覧 */
