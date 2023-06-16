@@ -16,6 +16,7 @@
 
 .comicconnect-icon {
   width: 10vw;
+  mix-blend-mode: multiply
 }
 
 .title {
