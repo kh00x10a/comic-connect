@@ -1,0 +1,10 @@
+.second-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comicconnect-icon {
+  width: 10vw;
+  margin: 2vh 0;
+}
