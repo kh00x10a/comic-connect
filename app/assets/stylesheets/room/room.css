@@ -7,7 +7,7 @@ h1 {
 
 .chat-room-form {
   width: 980px;
-  margin: 60px auto;
+  margin: 0 auto;
   padding: 40px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -37,8 +37,10 @@ h1 {
 .chat-room-form__action-btn {
   display: inline-block;
   padding: 12px 20px;
+  margin-right: 20vh;
   color: #fff;
-  background-color: #38aef0;
+  background-color:#FF0000; /* カーソルを乗せた時の色を指定 */
+  ;
   border: 0;
 }
 .chat-room-form__field {
