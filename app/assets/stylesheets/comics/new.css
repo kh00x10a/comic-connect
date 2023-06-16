@@ -29,6 +29,10 @@
   text-align: center;
 }
 
+#info-box {
+  width: 100%;
+}
+
 /* 共通 */
 .indispensable {
   background: #ea352d;
