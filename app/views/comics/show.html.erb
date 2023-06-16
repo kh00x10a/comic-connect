@@ -24,7 +24,7 @@
         <% end %>
       </span>
       <% if @comic.user.present? %>
-        <%= link_to "by #{@comic.user.name}", user_path(@comic.user.id), class: "user-show-name" %>
+        <%= link_to "by #{@comic.user.name}", user_path(@comic.user.id), class: "user-name" %>
       <% end %>
     </div>
     <% if user_signed_in? && current_user.id == @comic.user_id %>
