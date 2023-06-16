@@ -2,7 +2,7 @@
   <%= render "shared/header" %>
   <div class="user-box">
     <h2 class="page-heading">
-      <%= @user.name %>さんの投稿作品
+      <%= @user.name %>
     </h2>
     <% if current_user == @user %>
       <ul class="user-manage">
@@ -11,6 +11,9 @@
       </ul>
     <% end %>
     <div class='comic-contents'>
+      <h2 class="contents-heading">
+        <%= @user.name %>さんの投稿作品
+      </h2>
       <ul class='comic-lists'>
         <% @comics.each do |comic| %>
           <li class='list'>
