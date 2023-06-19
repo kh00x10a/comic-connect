@@ -70,7 +70,7 @@
     <div class="comment-box">
       <% if user_signed_in? %>
         <%= form_with(model: [@comic, @comment], local: true) do |f| %>
-          <div class="field" style="margin: auto;">
+          <div class="field" style="margin: auto; width: 50%;">
             <%= f.label :content, "コメント" %><br />
             <%= f.text_field :content, id:"comment_text" %>
           </div>
@@ -79,9 +79,9 @@
           </div>
         <% end %> 
       <% end %>
-      <ul class="comments_lists">
+      <ul class="comments_lists" style="margin: auto; width: 50%;">
         <% @comments.each do |comment| %>
-          <li class="comments_list">
+          <li class="comments_list" style="margin: auto; width: 80%;">
             <%=comment.content %>
             <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %>
           </li>
