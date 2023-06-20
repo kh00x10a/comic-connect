@@ -129,7 +129,7 @@ li {
 
   .login,
   .sign-up {
-    display: none;
+    display: inline-block; 
   }
 }
 
@@ -155,7 +155,7 @@ li {
 
   .login,
   .sign-up {
-    display: none;
+    display: inline-block; 
   }
 }
 
@@ -181,6 +181,6 @@ li {
 
   .login,
   .sign-up {
-    display: none;
+    display: inline-block; 
   }
 }

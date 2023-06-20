@@ -12,14 +12,14 @@
       <% if user_signed_in? %>
         <li class="user-name" id="user-lists"><%= current_user.name %>
           <ul class="show-lists" id="user-pull-down" style="display: none;">
-            <li><%= link_to 'マイページ', user_path(current_user.id), class: "user-pull-down-list my-page" %></li>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-pull-down-list logout" %></li>
+            <li><%= link_to 'マイページ', user_path(current_user.id), class: "user-pull-down-list my-page", style: "color: #FF0000;" %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-pull-down-list logout", style: "color: #FF0000;" %></li>
           </ul>
         </li>
         <li class="new-action" id="new-lists">action
           <ul class="show-lists" id="new-pull-down" style="display: none;">
-            <li><%= link_to '新規投稿', new_comic_path, class: "new-pull-down-list new-comic" %></li>
-            <li><%= link_to 'チャットルーム', rooms_path, class: "new-pull-down-list new-room" %></li>
+            <li><%= link_to '新規投稿', new_comic_path, class: "new-pull-down-list new-comic", style: "color: #FF0000;" %></li>
+            <li><%= link_to 'チャットルーム', rooms_path, class: "new-pull-down-list new-room", style: "color: #FF0000;" %></li>
           </ul>
         </li>
       <% else %>

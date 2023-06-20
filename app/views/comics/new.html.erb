@@ -52,32 +52,32 @@
             ジャンル
             <span class="indispensable">必須</span>
           </div>
-          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"comic-genre"}) %>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"comic-genre", style: "font-weight: normal;"}) %>
           <div class="weight-bold-text">
             カテゴリー
             <span class="indispensable">必須</span>
           </div>
-          <%= f.collection_select(:magazine_id, Magazine.all, :id, :name, {}, {class:"select-box", id:"comic-magazine"}) %>
+          <%= f.collection_select(:magazine_id, Magazine.all, :id, :name, {}, {class:"select-box", id:"comic-magazine", style: "font-weight: normal;"}) %>
           <div class="weight-bold-text">
             年代
             <span class="indispensable">必須</span>
           </div>
-          <%= f.collection_select(:decade_id, Decade.all, :id, :name, {}, {class:"select-box", id:"comic-decade"}) %>
+          <%= f.collection_select(:decade_id, Decade.all, :id, :name, {}, {class:"select-box", id:"comic-decade", style: "font-weight: normal;"}) %>
           <div class="weight-bold-text">
             出版社
             <span class="form-any">任意</span>
           </div>
-          <%= f.text_area :publisher, class:"comics-text", id:"comic-info", placeholder:"出版社名（任意 40文字まで)" ,maxlength:"40" %>
+          <%= f.text_area :publisher, class:"comics-text", id:"comic-info", placeholder:"出版社名（任意 40文字まで)" ,maxlength:"40", style: "font-weight: normal;" %>
           <div class="weight-bold-text">
             掲載誌
             <span class="form-any">任意</span>
           </div>
-          <%= f.text_area :publication, class:"comics-text", id:"comic-info", placeholder:"掲載紙名（任意 40文字まで)" ,maxlength:"40" %>
+          <%= f.text_area :publication, class:"comics-text", id:"comic-info", placeholder:"掲載紙名（任意 40文字まで)" ,maxlength:"40", style: "font-weight: normal;" %>
           <div class="weight-bold-text">
             一言感想
             <span class="form-any">任意</span>
           </div>
-          <%= f.text_area :impression, class:"comics-text", id:"comic-info", placeholder:"一言感想をお書きください。（ネタバレを含む内容は書かないで下さい。）（任意 50文字まで)" ,maxlength:"50" %>
+          <%= f.text_area :impression, class:"comics-text", id:"comic-info", placeholder:"一言感想をお書きください。（ネタバレを含む内容は書かないで下さい。）（任意 50文字まで)" ,maxlength:"50", style: "font-weight: normal;" %>
         </div>
       </div>
     </div>
@@ -86,13 +86,13 @@
     <%# 注意書き %>
     <div class="caution">
       <p class="sentence">
-
+        <strong>ご注意：</strong> この投稿では、特定の個人、団体、または何かを非難するような内容は書かないでください。
       </p>
       <p class="sentence">
-
+        建設的でポジティブな議論や情報の共有を目指しましょう。
       </p>
       <p class="sentence">
-
+        他の人々との争いや攻撃的なコメントは控えてください。
       </p>
     </div>
     <%# /注意書き %>
@@ -104,11 +104,5 @@
     <%# /下部ボタン %>
   </div>
   <% end %>
-
-  <footer class="items-sell-footer">
-    <%= link_to "#", "/" %>
-    <p class="inc">
-
-    </p>
-  </footer>
 </div>
+<%= render "shared/footer" %>
