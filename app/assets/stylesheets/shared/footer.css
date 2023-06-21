@@ -1,4 +1,5 @@
 .comic-footer {
   text-align: center;
-  margin-top: 2vh;
+  padding-top: 2vh;
+  background-color: wheat;
 }

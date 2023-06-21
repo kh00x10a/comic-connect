@@ -6,6 +6,10 @@
   font-weight: bold;
 }
 
+.user-box {
+  background-color: wheat;
+}
+
 .user-manage {
   display: flex;
   justify-content: center;

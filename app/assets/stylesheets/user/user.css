@@ -4,8 +4,13 @@
   padding: 60px;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 40px;
 }
+
+#account-page {
+  background-color: wheat;
+}
+
 .account-page .account-page__inner .account-page__inner--left, .account-page .account-page__inner .account-page__inner--right {
   float: left;
   width: 50%;

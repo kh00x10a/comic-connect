@@ -11,7 +11,7 @@ h1 {
   padding: 40px;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 40px;
   box-sizing: border-box;
 }
 .chat-room-form__errors {
@@ -72,4 +72,8 @@ select {
   background-color: #434a54;
   height: 80px;
   width: 100%;
+}
+
+.chat-full-room {
+  background-color: wheat;
 }
