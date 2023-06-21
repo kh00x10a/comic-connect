@@ -79,7 +79,7 @@ li {
 
 .user-pull-down-list:hover,
 .new-pull-down-list:hover {
-  color: #FF0000; /* カーソルを乗せた時の色を指定 */
+  color: #1BA69E; /* カーソルを乗せた時の色を指定 */
 }
 
 .login {
