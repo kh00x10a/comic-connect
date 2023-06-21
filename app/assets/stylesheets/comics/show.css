@@ -10,7 +10,7 @@
 }
 
 .comic-box {
-  background-color: #FFF;
+  background-color: #EFEFEF;
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 15vw;
@@ -76,7 +76,7 @@
 
 .detail-comic {
   width: 20%;
-  background-color: #eee;
+  background-color: #FAFAFA;
   border: 1px solid #dedede;
   font-size: 14px;
   text-align: center;
@@ -85,6 +85,7 @@
 .detail-value {
   width: 80%;
   padding: 20px;
+  background-color: #FAFAFA;
   border: 1px solid #dedede;
   font-size: 14px;
 }

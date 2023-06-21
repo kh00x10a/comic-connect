@@ -4,7 +4,7 @@ function pullDown() {
   const pullDownChild = document.querySelectorAll(".user-pull-down-list");
 
   pullDownButton.addEventListener('mouseover', function(){
-    this.setAttribute("style", "color:#6fb7ff;");
+    this.setAttribute("style", "color:#1BA69E;");
     pullDownParents.style.display = "block";
   });
 
@@ -15,7 +15,7 @@ function pullDown() {
 
   pullDownChild.forEach(function(element) {
     element.addEventListener('mouseover', function() {
-      this.style.color = "green"; // カーソルを置いた時の色を設定
+      this.style.color = "#1BA69E"; // カーソルを置いた時の色を設定
     });
 
     element.addEventListener('mouseout', function() {
