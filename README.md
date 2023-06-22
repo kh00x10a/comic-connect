@@ -105,7 +105,6 @@ https://gyazo.com/300ba694fc4921b749fe793da715d3c0
 新規作成ページにてチャットルーム名とチャットメンバーを入力しルーム作成をクリックするとチャットルームが作成される
 https://gyazo.com/127c12e8f612408cc78edb02ea9d1a4f
 https://gyazo.com/d8cea89486b1d0b14b4d6023cf0128b3
->>>>>>> 908c4a13ccb6fa97d4addca61b07efee693dd587
 
 ## メッセージ投稿機能
 作成したチャットルームをクリックすると、チャットルームが表示される  
