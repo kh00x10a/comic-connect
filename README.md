@@ -37,7 +37,7 @@ https://comicconnect.onrender.com
 # 実装した機能についての画像やGIFおよびその説明
 
 ## 漫画投稿機能
-1.ログイン時にヘッダーにあるactionボタンにカーソルを合わせて、表示された新規投稿ボタンをクリックすると漫画の新規投稿ページに遷移する
+1.ログイン時にヘッダーにあるactionボタンにカーソルを合わせて、表示された新規投稿ボタンをクリックすると漫画の新規投稿ページに遷移する  
 2.新規投稿ページにて、投稿フォームに漫画の情報（タイトル、原作、作者、ジャンル、カテゴリー、年代、出版社、掲載誌、一言感想）を入力し投稿する  
 3.投稿された漫画はトップページ（一覧ページ）に表示される  
 https://gyazo.com/d99e8e6da96df5645f04c3428c9b7609  
@@ -167,10 +167,10 @@ Visual Studio Code
 
 ### Association
 
-- has_many :comics
-- has_many :comments
-- has_many :room_users
-- has_many :rooms, through: :room_users
+- has_many :comics, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :room_users, dependent: :destroy
+- has_many :rooms, through: :room_users, dependent: :destroy
 - has_many :messages
 
 
@@ -192,7 +192,7 @@ Visual Studio Code
 ### Association
 
 - belongs_to :user
-- has_many :comments
+- has_many :comments, dependent: :destroy
 - belongs_to_active_hash :genre
 - belongs_to_active_hash :magazine
 - belongs_to_active_hash :decade
@@ -220,9 +220,9 @@ Visual Studio Code
 
 ### Association
 
-- has_many :rooms_users
+- has_many :rooms_users, dependent: :destroy
 - has_many :users, through: :room_users
-- has_many :messages
+- has_many :messages, dependent: :destroy
 
 ## room_users テーブル
 
